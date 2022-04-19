@@ -13,4 +13,30 @@ $utilities: (
         ) 
     )
 );
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+@mixin big($size:40px, $up:null){
+    font-size: $size;
+    @if $up == null {
+        transform: rotate(10deg);
+    }
+    @else if $up == true {
+        transform: rotate(180deg);
+    }
+    @else{
+        transform: rotate(8deg);
+    }
+}
+p:nth-child(1){
+    color: green;
+    @include big();
+}
+p:nth-child(2){
+    color: red;
+    @include big(30px,true);
+}
+p:nth-child(3){
+    color: orange;
+    @include big(20px,false);
+}
